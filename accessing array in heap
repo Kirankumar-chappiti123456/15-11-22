@@ -1,0 +1,35 @@
+
+typedef struct employee
+{
+  char name[10];
+  int id;
+  float salary;
+}emp;
+
+int main() {
+  emp *ptr;
+  int len=3;
+  ptr=(emp *)calloc(len,sizeof(emp));
+  (ptr+0)->id=14;
+  (ptr+0)->salary=4.5;
+  strcpy((ptr+0)->name,"hema");
+   (ptr+1)->id=14;
+  (ptr+1)->salary=4.5;
+  strcpy((ptr+1)->name,"hema");
+   (ptr+2)->id=14;
+  (ptr+2)->salary=4.5;
+  strcpy((ptr+2)->name,"hema");
+  len=4;
+  ptr=(emp *)realloc(ptr,len*sizeof(emp));
+  (ptr+3)->id=14;
+  (ptr+3)->salary=4.5;
+  strcpy((ptr+3)->name,"hema");
+  for(int i=0;i<len;i++)
+  {
+    printf("%s %d %f",(ptr+i)->name,(ptr+i)->id,(ptr+i)->salary);
+    printf("\n");
+    
+}
+free(ptr);
+  return 0;
+}
