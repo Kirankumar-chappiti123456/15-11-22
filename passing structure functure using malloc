@@ -1,0 +1,22 @@
+passing structure functure using malloc
+struct emp
+{
+  char name[20];
+  int roll;
+  float marks;
+};
+void display(struct emp *p)
+{
+printf("%s %d %f",p->name,p->roll,p->marks);
+}
+void main()
+{
+  struct emp *p;
+ 
+  p=(struct emp *)malloc(sizeof(struct emp));
+   strcpy(p->name,"raghu");
+p->roll=21;
+p->marks=98.00;
+  
+  display(p);
+}
